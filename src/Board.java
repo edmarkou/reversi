@@ -3,33 +3,20 @@ import java.util.Set;
 
 class Board {
 
-    public char[][] board;
-    int WScore, BScore;
+    private char[][] board;
+
+    public int getWScore() {
+        return WScore;
+    }
+
+    public int getBScore() {
+        return BScore;
+    }
+
+    private int WScore, BScore;
     private int remaining;
     private final char[] boardX = new char[]{'A','B','C','D','E','F','G','H'};
 
-    public class Point {
-        int x, y;
-        Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        @Override
-        public String toString() {
-            return "["+x+", "+y+"]";
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            return o.hashCode()==this.hashCode();
-        }
-
-        @Override
-        public int hashCode() {
-            return Integer.parseInt(x+""+y);
-        }
-    }
 
     Board(){
         board = new char[][]{
