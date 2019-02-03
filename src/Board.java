@@ -156,14 +156,14 @@ class Board {
 
     void showPlaceableLocations(HashSet<Point> locations, char player, char opponent){
         for(Point p:locations)
-            board[p.x][p.y]='*';
+            board[p.getX()][p.getY()]='*';
         displayBoard(this);
         for(Point p:locations)
-            board[p.x][p.y]='_';
+            board[p.getX()][p.getY()]='_';
     }
 
     void placeMove(Point p, char player, char opponent){
-        int i = p.x, j = p.y;
+        int i = p.getX(), j = p.getY();
         board[i][j] = player;
         int I = i, J = j;
 

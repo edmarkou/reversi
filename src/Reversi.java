@@ -35,14 +35,14 @@ class Reversi {
             if(!skip){
                 System.out.println("Place move (" + players.getPlayer() + "): ");
                 input = scan.next();
-                move.y = b.coordinateX(input.charAt(0));
-                move.x = (Integer.parseInt(input.charAt(1)+"")-1);
+                move.setY(b.coordinateX(input.charAt(0)));
+                move.setX(Integer.parseInt(input.charAt(1)+"")-1);
 
                 while(!placeableLocations.contains(move)){
                     System.out.println("Invalid move!\n\nPlace move (" + players.getPlayer() + "): ");
                     input = scan.next();
-                    move.y = b.coordinateX(input.charAt(0));
-                    move.x = Integer.parseInt((input.charAt(1)+""))-1;
+                    move.setY(b.coordinateX(input.charAt(0)));
+                    move.setX(Integer.parseInt((input.charAt(1)+""))-1);
                 }
                 b.placeMove(move, players.getPlayer().charAt(0), players.getOpponent().charAt(0));
                 b.updateScores();
