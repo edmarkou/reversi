@@ -220,7 +220,8 @@ class Board {
             while(j<7 && board[i][j] == opponent)
                 j++;
             if(j<=7 && board[i][j] == player) {
-                while(j!=J+1)board[i][--j] = player;
+                while(j!=J+1)
+                    board[i][--j] = player;
             }
         }
         j=J;
