@@ -6,18 +6,18 @@ public class PlayerUnitTest {
 
     @Test
     public void playerTest(){
-        Players players = new Players(PLAYER_1, PLAYER_2);
-        assert players.getPlayer().equals(PLAYER_1);
-        assert players.getOpponent().equals(PLAYER_2);
+        Turn turn = new Turn(PLAYER_1, PLAYER_2);
+        assert turn.getActivePlayer().equals(PLAYER_1);
+        assert turn.getInactivePlayer().equals(PLAYER_2);
     }
 
     @Test
     public void playersChangeRoles(){
-        Players players = new Players(PLAYER_1, PLAYER_2);
-        assert players.getPlayer().equals(PLAYER_1);
-        assert players.getOpponent().equals(PLAYER_2);
-        players.changeRoles(PLAYER_1, PLAYER_2);
-        assert players.getPlayer().equals(PLAYER_2);
-        assert players.getOpponent().equals(PLAYER_1);
+        Turn turn = new Turn(PLAYER_1, PLAYER_2);
+        assert turn.getActivePlayer().equals(PLAYER_1);
+        assert turn.getInactivePlayer().equals(PLAYER_2);
+        turn.changeRoles(PLAYER_1, PLAYER_2);
+        assert turn.getActivePlayer().equals(PLAYER_2);
+        assert turn.getInactivePlayer().equals(PLAYER_1);
     }
 }
